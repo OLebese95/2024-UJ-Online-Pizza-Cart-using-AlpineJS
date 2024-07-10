@@ -1,7 +1,7 @@
 function pizzaCart() {
   return {
       cart: {
-          small: 1,
+          small: 0,
           medium: 0,
           large: 0
       },
