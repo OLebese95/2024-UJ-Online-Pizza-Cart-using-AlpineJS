@@ -1,0 +1,113 @@
+body {
+    background-color:#fb8500;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.center {
+    text-align: center;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 0.5em;
+    margin-bottom: 0.5em;
+    background-image: url('BAKO.jpeg'); 
+    background-size:auto;
+}
+
+
+.center1 {
+    text-align: center;
+    border-radius: 1em;
+    border: 5px solid;
+    padding: 1em;
+    margin: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h4 {
+    text-decoration: underline;
+  }
+
+
+.pizza {
+    /*Box-Model*/
+    border: 5px solid;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 0.5em;
+    margin-bottom: 0.5em;
+    
+    /* use display in-line-block */
+
+    /*width: 20es;
+    display: block;
+    min-height: 30es;*/
+}
+
+.small_pizza {
+    background-color:#ff006e;
+    flex: 1;
+}
+
+.medium_pizza {
+    background-color: #8338ec;
+    flex: 1;
+}
+
+.large_pizza {
+    background-color: #3a86ff;
+    flex: 1;
+}
+
+
+.footer {
+    display: flex;
+    border: 5px solid;
+    background-color: #ffb703;
+    border-radius: 1em;
+    justify-content: space-between;
+    padding:auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .left {
+    text-align: left;
+  }
+  
+  .right {
+    text-align: left;
+  }
+
+.items {
+    display: flex: block;
+    flex-wrap: wrap;
+    justify-content:content;
+    align-items: center;
+}
+
+
+/* Styles for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+/* Styles for screens between 600px and 900px */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    body {
+        background-color: lightgreen;
+    }
+}
+
+/* Styles for screens larger than 900px */
+@media screen and (min-width: 900px) {
+    body {
+        background-color: lightyellow;
+        .pizza-container {
+        display: flex;
+        }   
+    }
+}

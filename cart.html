@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" />
+  <title>Shopping Cart</title>
+
+<body>
+
+  <body>
+    <div class="center">
+      <img src="pizza res.png" width="130" />
+      <h1>Perfect Pizza</h1>
+    </div>
+
+    <div class="center1">
+      <h2>Order Now!</h2>
+      <p>Our pizzas are made with fresh ingredients, and we deliver in minutes!</p>
+      <div class="cart">
+        <h3>Shopping Cart</h3>
+        <div class="container" x-data="pizzaCart()">
+          <section class="center-align">
+
+            <div class="cart">
+
+              <div>
+                <p>Small <button @click="addToCart('small', 39.99)">+</button> <span x-text="cart.small"></span> <button
+                    @click="removeFromCart('small', 39.99)">-</button> R<span x-text="39.99"></span></p>
+
+
+                <p>Medium <button @click="addToCart('medium', 78.99)">+</button> <span x-text="cart.medium"></span>
+                  <button @click="removeFromCart('medium', 78.99)">-</button> R<span
+                    x-text="78.99"></span>
+                </p>
+
+                <p>Large <button @click="addToCart('large', 87.99)">+</button> <span x-text="cart.large"></span> <button
+                    @click="removeFromCart('large', 87.99)">-</button> R<span x-text="cart.large * 87.99"></span></p>
+                <p>Total cost: R<span x-text="totalCost.toFixed(2)"></span></p>
+              </div>
+              
+              <div>
+                <p class="message" x-text="message"></p>
+                <input type="number" placeholder="Payment amount" x-model="paymentAmount">
+                <button @click="checkout()" class="btn myButton" x-show="totalCost > 0">Pay</button>
+              </div>
+            </div>
+         
+    
+          
+        <section class="pizza-container">
+
+            <div class="pizza" style="background-color:#ff006e">
+              <h3>Small Pizza</h3>
+              <img src="pizza_one.png" width="100" />
+              <h2>R39.99</h2>
+              <p>Small pizza with 3 toppings, 1 meat topping, 3 or less other toppings.</p>
+              <button @click="addToCart('small', 39.99)" class="btn myButton">Buy</button>
+            </div>
+
+            <div class="pizza" style="background-color: #8338ec">
+              <h3>Medium Pizza</h3>
+              <img src="pizza_two.png" width="125" />
+              <h2>R78.99</h2>
+              <p>Medium margherita pizza with 3 toppings max. 2 or less meat toppings, 3 or less other toppings.</p>
+              <button @click="addToCart('medium', 78.99)" class="btn myButton">Buy</button>
+            </div>
+
+            <div class="pizza"  style="background-color: #3a86ff">
+              <h3>Large Pizza</h3>
+              <img src="pizza_three.png" width="150" />
+              <h2>R87.99</h2>
+              <p>Large margherita pizza with 3 toppings max. 3 or less meat toppings, 3 or less other toppings.</p>
+              <button @click="addToCart('large', 87.99)" class="btn myButton">Buy</button>
+            </div>
+
+           
+          </section>
+      
+
+        <div class="footer">
+          <div class="left">
+            <h2>Contact Details:</h2>
+            <div>
+              <div class="items">
+                <img src="telephone-call.png" width="25" />
+                <p>011 450 1235</p>
+              </div>
+      
+              <div class="items">
+                <img src="facebook.png" width="25" />
+                <img src="instagram.png" width="25" />
+                <img src="twitter.png" width="25" />
+                <p>perfect_pizza</p>
+              </div>
+              <div class="items">
+                <img src="mail.png" width="25" />
+                <p>info@perfectpizza.co.za</p>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <h2>Opening Hours:</h2>
+            <p>08:00-17:00</p>
+            <div class="items">
+              <img src="maps-and-flags.png" width="25" />
+              <p>56 Bree Street</p>
+              <p>Johanesburg</p>
+              <p>2001</p>
+            </div>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+        <script src="cart.js" defer></script>
+  </body>
+
+</html>
+
