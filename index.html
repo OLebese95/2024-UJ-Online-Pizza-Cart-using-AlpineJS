@@ -35,8 +35,8 @@
                     x-text="78.99"></span>
                 </p>
 
-                <p>Large <button @click="addToCart('large', 87.99)">+</button> <span x-text="cart.large"></span> <button
-                    @click="removeFromCart('large', 87.99)">-</button> R<span x-text="87.99"></span></p>
+                <p>Large <button @click="addToCart('large', 129.99)">+</button> <span x-text="cart.large"></span> <button
+                    @click="removeFromCart('large', 129.99)">-</button> R<span x-text="129.99"></span></p>
                 <p>Total cost: R<span x-text="totalCost.toFixed(2)"></span></p>
               </div>
               
@@ -46,8 +46,6 @@
                 <button @click="checkout()" class="btn myButton" x-show="totalCost > 0">Pay</button>
               </div>
             </div>
-         
-    
           
         <section class="pizza-container">
 
@@ -70,9 +68,9 @@
             <div class="pizza"  style="background-color: #3a86ff">
               <h3>Large Pizza</h3>
               <img src="pizza_three.png" width="150" />
-              <h2>R87.99</h2>
+              <h2>R129.99</h2>
               <p>Large margherita pizza with 3 toppings max. 3 or less meat toppings, 3 or less other toppings.</p>
-              <button @click="addToCart('large', 87.99)" class="btn myButton">Buy</button>
+              <button @click="addToCart('large', 129.99)" class="btn myButton">Buy</button>
             </div>
 
            
