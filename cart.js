@@ -1,38 +1,77 @@
-function pizzaCart() {
-  return {
-      cart: {
-          small: 0,
-          medium: 0,
-          large: 0
+function cart() {
+    return {
+      sizes: {
+        small: 49.0,
+        medium: 89.0,
+        large: 129.0,
       },
-      totalCost: 0,
-      paymentAmount: 0,
-      message: '',
-      addToCart(size, price) {
-          this.cart[size]++;
-          this.totalCost += price;
+      totalPrice: 0,
+      checkoutAmount: 0,
+      smallPizza: 0,
+      mediumPizza: 0,
+      largePizza: 0,
+      paymentEntered: false,
+      showCheckout: false,
+      showReceipt: false,
+      change: 0,
+      addPizza(size) {
+        this.totalPrice += this.sizes[size];
+        if (size == "small") {
+          this.smallPizza++;
+        }
+        if (size == "medium") {
+          this.mediumPizza++;
+        }
+        if (size == "large") {
+          this.largePizza++;
+        }
       },
-      removeFromCart(size, price) {
-          if (this.cart[size] > 0) {
-              this.cart[size]--;
-              this.totalCost -= price;
-          }
+      removePizza(size) {
+        if (this.totalPrice >= this.sizes[size]) {
+          this.totalPrice -= this.sizes[size];
+        }
+        if (size == "small" && this.smallPizza > 0) {
+          this.smallPizza--;
+        }
+        if (size == "medium" && this.mediumPizza > 0) {
+          this.mediumPizza--;
+        }
+        if (size == "large" && this.largePizza > 0) {
+          this.largePizza--;
+        }
       },
-      checkout() {
-          if (this.paymentAmount >= this.totalCost) {
-              this.message = 'Enjoy!';
-              this.clearCart();
-          } else {
-              this.message = 'Sorry - that is not enough money!';
-          }
-          setTimeout(() => this.message = '', 3000);
+      processPayment() {
+        if (this.checkoutAmount >= this.totalPrice) {
+          this.paymentEntered = true;
+          this.change = this.checkoutAmount - this.totalPrice;
+          this.showReceipt = true;
+          this.showCheckout = false;
+        } else {
+          alert("Sorry - that is not enough money!");
+        }
+      },
+      cancelPayment() {
+        this.showCheckout = false;
+        this.checkoutAmount = 0;
       },
       clearCart() {
-          this.cart.small = 0;
-          this.cart.medium = 0;
-          this.cart.large = 0;
-          this.totalCost = 0;
-          this.paymentAmount = 0;
+        this.paymentEntered = false;
+        this.showCheckout = false;
+        this.showReceipt = false;
+        this.totalPrice = 0;
+        this.checkoutAmount = 0;
+        this.smallPizza = 0;
+        this.mediumPizza = 0;
+        this.largePizza = 0;
+        this.change = 0;
+      },
+      getReceipt() {
+        const items = [];
+        if (this.smallPizza > 0) items.push(`Small Pizza x ${this.smallPizza} - R${(this.sizes.small * this.smallPizza).toFixed(2)}`);
+        if (this.mediumPizza > 0) items.push(`Medium Pizza x ${this.mediumPizza} - R${(this.sizes.medium * this.mediumPizza).toFixed(2)}`);
+        if (this.largePizza > 0) items.push(`Large Pizza x ${this.largePizza} - R${(this.sizes.large * this.largePizza).toFixed(2)}`);
+        return items;
       }
+    };
   }
-}
+  

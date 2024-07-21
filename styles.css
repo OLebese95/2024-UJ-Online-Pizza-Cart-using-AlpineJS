@@ -1,6 +1,5 @@
 body {
-    background-color:#fb8500;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .center {
@@ -9,10 +8,9 @@ body {
     padding: 1em;
     margin: 0.5em;
     margin-bottom: 0.5em;
-    background-image: url('BAKO.jpeg'); 
-    background-size:auto;
+    background-image: url('BAKO.jpeg');
+    background-size: auto;
 }
-
 
 .center1 {
     text-align: center;
@@ -25,26 +23,26 @@ body {
 
 h4 {
     text-decoration: underline;
-  }
-
+}
 
 .pizza {
-    /*Box-Model*/
     border: 5px solid;
     border-radius: 1em;
     padding: 1em;
     margin: 0.5em;
     margin-bottom: 0.5em;
-    
-    /* use display in-line-block */
+    background-color: #fff;
+    text-align: center;
+}
 
-    /*width: 20es;
+.pizza img {
+    width: 150px;
     display: block;
-    min-height: 30es;*/
+    margin: 0 auto;
 }
 
 .small_pizza {
-    background-color:#ff006e;
+    background-color: #ff006e;
     flex: 1;
 }
 
@@ -58,35 +56,21 @@ h4 {
     flex: 1;
 }
 
-
 .footer {
-    display: flex;
-    border: 5px solid;
-    background-color: #ffb703;
-    border-radius: 1em;
+    /* display: flex; */
     justify-content: space-between;
-    padding:auto;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 1em;
     margin: 0.5em;
     margin-bottom: 0.5em;
-  }
-  
-  .left {
-    text-align: left;
-  }
-  
-  .right {
-    text-align: left;
-  }
-
-.items {
-    display: flex: block;
-    flex-wrap: wrap;
-    justify-content:content;
-    align-items: center;
 }
 
+
+
+input[type="number"] {
+    width: 30%;
+    margin: 0.5em auto;
+    display: block;
+}
 
 /* Styles for screens smaller than 600px */
 @media screen and (max-width: 600px) {
@@ -106,8 +90,5 @@ h4 {
 @media screen and (min-width: 900px) {
     body {
         background-color: lightyellow;
-        .pizza-container {
-        display: flex;
-        }   
     }
 }
